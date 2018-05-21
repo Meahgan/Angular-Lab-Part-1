@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js'></script>
+
+  </head>
+  <body>
+<!-- {{2+2}} -->
+  <div id="container">
+  <h1>TODO List</h1>
+
+  <p>A place to store the things you have to do!</p>
+
+  <div id="tasks">
+    <div class="form1">
+      <input placeholder="Filter your to-dos" type="text" ng-model="filter">
+    </div>
+
+    <div class="list">
+      <ol ng-controller="TodoController as ctrl">
+        <li ng-repeat="tasks in ctrl.list" ng-controller="complete" ng-class='{li: true, complete: class1}'>
+        <button ng-click="ChangeStyle()" ng-init="text=true" ng-if="clicked">Complete</button>
+        {{ tasks.task }}
+        <span>x</span>
+      </li>
+    </ol>
+    </div>
+
+    <div class="add">
+    <input placeholder="Add your to do" type="text" ng-model="add">
+    </div>
+
+      <button id="add" ng-click="alpha = true" ng-class="add">Add</button>
+      
+    </div>
+
+
+
+    <script src="module.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
